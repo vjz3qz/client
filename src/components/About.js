@@ -7,7 +7,7 @@ function About() {
       <p>
         We are three UVA students looking to make a change in Charlottesville. 
         We noticed that many restaurants and dining halls have copious amounts of food waste and we wanted to address this.
-        Our goal is make a difference in the sustainibilty climate and find a way to contect these leftover vendors with Homeless shelters.
+        Our main goal is make a difference in the sustainibilty climate and find a way to contect these leftover vendors with Homeless shelters.
       </p>
     </div>
   );
