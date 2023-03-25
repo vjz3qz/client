@@ -2,7 +2,7 @@
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 // Import the API endpoint URL
-import { API_ENDPOINT } from "../utils/api";
+import { API_ENDPOINT as AVAILABLE_FOODS_API } from "../utils/AvailableRestaurants";
 
 // Define the center of the map
 const mapCenter = { lat: 38.0356, lng: -78.5033 };
@@ -12,7 +12,7 @@ const [restaurants, setRestaurants] = useState([]);
 
 // Fetch the list of restaurants with food available
 useEffect(() => {
-  fetch(API_ENDPOINT)
+  fetch(AVAILABLE_FOODS_API)
     .then((response) => response.json())
     .then((data) => setRestaurants(data))
     .catch((error) => console.error(error));
