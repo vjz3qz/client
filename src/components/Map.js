@@ -5,7 +5,7 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import { API_ENDPOINT } from "../utils/api";
 
 // Define the center of the map
-const mapCenter = { lat: 37.7749, lng: -122.4194 };
+const mapCenter = { lat: 38.0356, lng: -78.5033 };
 
 // Define the initial state of the component
 const [restaurants, setRestaurants] = useState([]);
