@@ -6,7 +6,7 @@ import { API_ENDPOINT } from "../utils/api";
 
 // Define the center of the map
 const mapCenter = { lat: 38.0356, lng: -78.5033 };
-
+const SECRET_KEY = process.env.API_KEY;
 // Define the initial state of the component
 const [restaurants, setRestaurants] = useState([]);
 
@@ -20,7 +20,7 @@ useEffect(() => {
 
 // Render the map with markers for each restaurant
 return (
-  <LoadScript googleMapsApiKey={YOUR_API_KEY}>
+  <LoadScript googleMapsApiKey={SECRET_KEY}>
     <GoogleMap center={mapCenter} zoom={12}>
       {restaurants.map((restaurant) => (
         <Marker
