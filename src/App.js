@@ -8,8 +8,6 @@ import Navbar from './components/NavBar';
 import './App.css';
 
 function App() {
-  const [foods, setFoods] = useState([]);
-
   return (
     <Router>
       <div className="App">
