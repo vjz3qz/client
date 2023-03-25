@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:1234/api/available-restaurants';
+const API_URL = 'http://localhost:1234/api/restaurants-with-food';
 
 async function fetchAvailableRestaurants() {
   const response = await fetch(API_URL);
