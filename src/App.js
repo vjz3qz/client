@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import AddFood from "./pages/AddFood";
 import NavigationBar from './components/NavigationBar';
 import './styles/App.css';
 import { Loader } from '@googlemaps/js-api-loader';
@@ -35,6 +36,7 @@ function App() {
           <Route path="/" element={<Home map={map} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/AddFood" element={<AddFood />} />
         </Routes>
         {/* <div ref={mapRef} style={{ height: '500px', width: '100%' }}></div> */}
       </div>
