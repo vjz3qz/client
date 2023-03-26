@@ -9,6 +9,8 @@ const FoodForm = () => {
   const [restaurant, setRestaurant] = useState('');
   const [restaurants, setRestaurants] = useState([]);
 
+  
+
   // Fetch the list of restaurants on component mount
   useEffect(() => {
     fetch('http://localhost:1234/api/restaurants')
@@ -26,18 +28,23 @@ const FoodForm = () => {
       expirationDate,
       restaurant,
     };
-    const response = await fetch('/api/foods', {
+    const response = await fetch('http://localhost:1234/api/food', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
     if (response.ok) {
-      setName('');
-      setUnit('');
-      setQuantity('');
-      setExpirationDate('');
-      setRestaurant('');
-      alert('Food added successfully!');
+        const data = await response.json();
+        setName('');
+        setUnit('');
+        setQuantity('');
+        setExpirationDate('');
+        setRestaurant('');
+        alert('Food added successfully!');
+        console.log(data);
+        console.log(data.food); // log the saved food object
+        console.log(data.restaurant); // log the saved restaurant object
+      console.log(response);
     } else {
       alert('Something went wrong. Please try again.');
     }
