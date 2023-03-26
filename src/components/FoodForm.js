@@ -11,7 +11,7 @@ const FoodForm = () => {
 
   // Fetch the list of restaurants on component mount
   useEffect(() => {
-    fetch('/api/restaurants')
+    fetch('http://localhost:1234/api/restaurants')
       .then(response => response.json())
       .then(data => setRestaurants(data))
       .catch(error => console.error(error));
@@ -43,6 +43,7 @@ const FoodForm = () => {
     }
   };
 
+  console.log(restaurants);
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group controlId="formName">
