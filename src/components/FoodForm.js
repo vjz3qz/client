@@ -50,38 +50,50 @@ const FoodForm = () => {
     }
   };
 
-  console.log(restaurants);
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }} onSubmit={handleSubmit}>
+      <h2 style={{ textAlign: 'center' }}>Add Food Item</h2>
       <Form.Group controlId="formName">
-        <Form.Label>Name</Form.Label>
-        <Form.Control type="text" placeholder="Enter name" value={name} onChange={(e) => setName(e.target.value)} required />
+        <Form.Label style={{paddingLeft: "17px", paddingRight: "px", textAlign: "left", fontSize: "17px"}}>
+          Name
+        </Form.Label>
+        <Form.Control type="text" placeholder="Bread" value={name} onChange={(e) => setName(e.target.value)} required 
+        style={{width:"150px"}}/>
       </Form.Group>
 
       <Form.Group controlId="formUnit">
-        <Form.Label>Unit</Form.Label>
-        <Form.Control type="text" placeholder="Enter unit" value={unit} onChange={(e) => setUnit(e.target.value)} required />
+        <Form.Label style={{paddingLeft: "2px", paddingRight: "8px", textAlign: "left", fontSize: "17px"}}>
+          Unit
+        </Form.Label>
+        <Form.Control type="text" placeholder="Loafs" value={unit} onChange={(e) => setUnit(e.target.value)} required style={{width:"150px"}}/>
       </Form.Group>
 
       <Form.Group controlId="formQuantity">
-        <Form.Label>Quantity</Form.Label>
-        <Form.Control type="text" placeholder="Enter quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} required />
+        <Form.Label style={{paddingLeft: "35px", paddingRight: "8px", textAlign: "left", fontSize: "17px"}}>
+          Quantity
+        </Form.Label>
+        <Form.Control type="text" placeholder="8" value={quantity} onChange={(e) => setQuantity(e.target.value)} required style={{width:"150px"}}/>
       </Form.Group>
 
       <Form.Group controlId="formExpirationDate">
-        <Form.Label>Expiration Date</Form.Label>
+        <Form.Label style={{paddingLeft: "33px",paddingRight: "8px", textAlign: "left", fontSize: "17px"}}>
+          Expiration Date
+        </Form.Label>
         <Form.Control type="date" placeholder="Enter expiration date" value={expirationDate} onChange={(e) => setExpirationDate(e.target.value)} required />
       </Form.Group>
 
       <Form.Group controlId="formRestaurant">
-        <Form.Label>Restaurant</Form.Label>
+        <Form.Label style={{paddingTop:"200px", paddingLeft: "25px", paddingRight: "8px", textAlign: "left", fontSize: "17px"}}>
+          Restaurant
+        </Form.Label>
         <Form.Control as="select" value={restaurant} onChange={(e) => setRestaurant(e.target.value)} required>
-          <option value="">-- Select a restaurant --</option>
+          <option value=""> Select a restaurant </option>
           {restaurants.map(restaurant => <option key={restaurant._id} value={restaurant._id}>{restaurant.name}</option>)}
         </Form.Control>
       </Form.Group>
-
-      <Button variant="primary" type="submit">
+      <h style={{paddingTop:"4px", fontSize:"200px"}}>
+      </h>
+      <Button variant="primary" type="submit" style={{ display: 'block', margin: 'auto',}}>
         Submit
       </Button>
     </Form>
