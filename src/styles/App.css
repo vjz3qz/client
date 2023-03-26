@@ -90,7 +90,7 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2f2f2f;
+  background-color: #9c3030;
   height: 60px;
   padding: 0 20px;
 }
