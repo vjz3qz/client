@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-
+import '../styles/App.css';
 
 const Home = () => {
   const mapRef = useRef(null);
@@ -77,7 +77,12 @@ const Home = () => {
             to reduce food waste while helping those in need. Join us in making a
             difference today!
         </p>
-        <div ref={mapRef} style={{ height: "500px", width: "100%" }}></div>
+
+        <div className="map-container">
+
+        < div ref={mapRef} style={{height: "500px", width: "65%", margin: "0 auto", padding: "100px", border: "5px solid black", borderRadius: "18px"}}></div>
+
+        </div> 
     </div>
   );
 };

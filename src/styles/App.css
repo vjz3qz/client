@@ -1,3 +1,15 @@
+.map-container {
+  position: relative;
+  height: 500px;
+}
+
+.map-container .map {
+  position: absolute;
+  top: 100;
+  left: 0;
+  transform: translate(50px, 50px);
+}
+
 .App {
   text-align: center;
   font-size: calc(10px + 2vmin);
@@ -25,32 +37,13 @@
   padding-left: 80px;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/*body changes overall text values*/
 
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
 
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 1rem;
-  color: white;
-}
-
-
-
-main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-}
 
 h1 {
   font-size: 2rem;
