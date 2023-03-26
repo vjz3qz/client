@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const loader = new Loader({
-      apiKey: 'YOUR_API_KEY',
+      apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
       version: 'weekly',
     });
 
