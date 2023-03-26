@@ -36,7 +36,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <div ref={mapRef} style={{ height: '500px', width: '100%' }}></div>
+        {/* <div ref={mapRef} style={{ height: '500px', width: '100%' }}></div> */}
       </div>
     </Router>
   );

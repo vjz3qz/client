@@ -10,32 +10,28 @@ const Home = () => {
       apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
       version: "weekly",
     });
-
+  
     loader.load().then(() => {
       const map = new window.google.maps.Map(mapRef.current, {
         center: location,
         zoom: 16,
       });
-
+  
       const marker = new window.google.maps.Marker({
         position: location,
         map: map,
       });
-
+  
+      // Get the current position once and stop watching for updates
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setLocation({
+          const currentPosition = {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
-          });
-          map.setCenter({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          });
-          marker.setPosition({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          });
+          };
+          setLocation(currentPosition);
+          map.setCenter(currentPosition);
+          marker.setPosition(currentPosition);
         },
         (error) => {
           console.log(error);
@@ -43,7 +39,7 @@ const Home = () => {
         { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
       );
     });
-  }, [location]);
+  }, []);
 
   return (
     <div>
