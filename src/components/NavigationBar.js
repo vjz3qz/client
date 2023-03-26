@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/App.css';
-import logo from '../styles/HooHacksLogo.png'; 
+import logo from '../styles/HooHacksLogo2.png'; 
 
 function NavigationBar() {
     return (
@@ -9,7 +9,7 @@ function NavigationBar() {
           <div className="nav-logo">
             <Link to="/">
                 Leftover Love
-                <img src={logo} alt="Logo" style={{ width: "100px", verticalAlign: "middle" }}/>
+                <img src={logo} alt="Logo" style={{ height:"90px",width: "90px", verticalAlign: "middle" }}/>
                 
             </Link>
           </div>
