@@ -1,2 +1,2 @@
 # Leftover Link Front-End
-Built with React.
+Created a responsive user interface using React.js.
