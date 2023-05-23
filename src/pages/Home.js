@@ -88,7 +88,7 @@ const Home = () => {
   */
     <div>
     <h1 style={{ paddingBottom: "10px", paddingTop: "7px", }}>
-      Welcome to Leftover Love
+      Welcome to Leftover Link
       </h1>
     <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
       <div style={{ flex: 1}}>
@@ -96,7 +96,7 @@ const Home = () => {
               About
         </p>
         <p style={{ paddingLeft: "80px", paddingRight: "80px", textAlign: "left", fontSize: "17px"}} >
-              Leftover Love is an app that connects local restaurants with nearby
+              Leftover Link is an app that connects local restaurants with nearby
               homeless shelters to donate unused food before it expires. Our goal is
               to reduce food waste while helping those in need. Join us in making a
               difference today!
@@ -105,7 +105,7 @@ const Home = () => {
               Mission Statement
         </p>
         <p style={{ paddingLeft: "80px", paddingRight: "80px", textAlign: "left", fontSize: "17px"}} >
-              Leftover Love's mission is to bridge the gap between local restaurants and homeless shelters, 
+              Leftover Link's mission is to bridge the gap between local restaurants and homeless shelters, 
               by providing a platform that facilitates the donation of unused food before it goes to waste. We believe that 
               everyone deserves access to fresh and nutritious meals, and that we can reduce food waste while addressing hunger 
               in our communities. Our app provides a simple and easy-to-use solution for restaurants and shelters to connect and 
