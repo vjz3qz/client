@@ -1,4 +1,4 @@
-# Leftover Link - Front-End
+# Leftover Link: Front-End
 
 This is the client-side submodule of the Leftover Link application. It is built with React.js and provides a user-friendly interface for interacting with the Leftover Link platform. The client-side code communicates with the server-side API to fetch and update data related to restaurants and food items.
 
