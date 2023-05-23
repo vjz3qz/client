@@ -8,7 +8,7 @@ function NavigationBar() {
         <div className="nav-bar">
           <div className="nav-logo">
             <Link to="/">
-                Leftover Love
+                Leftover Link
                 <img src={logo} alt="Logo" style={{ height:"90px",width: "90px", verticalAlign: "middle" }}/>
                 
             </Link>
