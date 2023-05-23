@@ -136,28 +136,3 @@ const Home = () => {
 
 export default Home;
 
-
-
-/*
-<div>
-  <h1>Welcome to Leftover Love</h1>
-  <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-    <div style={{ flex: 1}}>
-      <p>
-            Leftover Love is an app that connects local restaurants with nearby
-            homeless shelters to donate unused food before it expires. Our goal is
-            to reduce food waste while helping those in need. Join us in making a
-            difference today!
-      </p>
-    </div>
-    <div style={{ flex: 1 }}>
-      <div className="map-container">
-        <div ref={mapRef} className="map"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-*/
