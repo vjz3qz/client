@@ -24,7 +24,7 @@ const Home = () => {
       });
 
     // Fetch the data from the API endpoint
-    fetch("/restaurants-with-food")
+    fetch("/expiring-food")
     .then((response) => response.json())
     .then((data) => {
       // Loop through the data and create a marker for each location
