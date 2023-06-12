@@ -7,67 +7,58 @@ const Home = () => {
   const [location, setLocation] = useState({ lat: 0, lng: 0 });
 
   useEffect(() => {
+    // Step 1: Initialize Google Maps
     const loader = new Loader({
       apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
       version: "weekly",
     });
   
+    let map, userMarker;
+  
     loader.load().then(() => {
-      const map = new window.google.maps.Map(mapRef.current, {
-        center: location,
+      map = new window.google.maps.Map(mapRef.current, {
         zoom: 16,
       });
   
-      const marker = new window.google.maps.Marker({
-        position: location,
+      userMarker = new window.google.maps.Marker({
         map: map,
       });
-
-    // Fetch the data from the API endpoint
-    fetch("/expiring-food")
-    .then((response) => response.json())
-    .then((data) => {
-      // Loop through the data and create a marker for each location
-      data.forEach((location) => {
-        
-        const geocoder = new window.google.maps.Geocoder();
-        geocoder.geocode({ address: location }, (results, status) => {
-            if (status === "OK") {
-            const marker = new window.google.maps.Marker({
-                position: results[0].geometry.location,
-                map: map,
-                title: location,
-            });
-            marker.setMap(map);
-            } else {
-            console.error("Geocode was not successful for the following reason: " + status);
-            }
-        });
-      });
-    })
-    .catch((error) => {
-      console.error(error);
     });
   
-      // Get the current position once and stop watching for updates
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const currentPosition = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-          setLocation(currentPosition);
-          map.setCenter(currentPosition);
-          marker.setPosition(currentPosition);
-        },
-        (error) => {
-          console.log(error);
-        },
-        { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
-      );
-    });
+    // Step 2: Fetch user's current location
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const currentPosition = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+  
+        map.setCenter(currentPosition);
+        userMarker.setPosition(currentPosition);
+  
+        // Step 3: Fetch data from API
+        fetch("http://localhost:1234/expiring-food")
+          .then((response) => response.json())
+          .then((data) => {
+            // Step 4: For each location from API, create a marker on the map
+            data.forEach((location) => {
+              new window.google.maps.Marker({
+                position: new window.google.maps.LatLng(location.lat, location.lng),
+                map: map,
+              });
+            });
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      },
+      (error) => {
+        console.log(error);
+      },
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+    );
   }, []);
-
+  
   return (
 /*
     <div>
