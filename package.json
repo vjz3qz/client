@@ -5,6 +5,7 @@
   "proxy": "https://localhost:1234/",
   "https-proxy": "http://localhost:1234/",
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2",
     "@react-google-maps/api": "^2.18.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
