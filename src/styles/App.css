@@ -1,13 +1,20 @@
 .map-container {
   position: relative;
   height: 500px;
+  width: 100%;
+  max-width: 500px; /* Adjust the max width as needed */
+  margin: 0 auto;
 }
 
 .map-container .map {
   position: absolute;
-  top: 100;
+  top: 0;
   left: 0;
-  transform: translate(50px, 50px);
+  width: 100%;
+  height: 100%;
+  border: 5px solid black;
+  border-radius: 18px;
+  box-sizing: border-box;
 }
 
 .App {
@@ -15,7 +22,6 @@
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
   padding-bottom: 50px;
-
 }
 
 .App-logo {
@@ -37,13 +43,12 @@
   padding-left: 80px;
 }
 
-/*body changes overall text values*/
+/* body changes overall text values */
 
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
-
 
 h1 {
   font-size: 2rem;
@@ -54,7 +59,6 @@ p {
   line-height: 1.5;
   margin-bottom: 1rem;
 }
-
 
 form {
   display: flex;
@@ -113,10 +117,6 @@ button[type="submit"]:hover {
   margin-left: 0;
 }
 
-
-
-
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -124,109 +124,8 @@ button[type="submit"]:hover {
   to {
     transform: rotate(360deg);
   }
-
 }
 
 /*
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-}
-
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 1rem;
-  color: white;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 1rem;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-
-main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-bottom: 0.5rem;
-}
-
-input[type="text"],
-input[type="email"] {
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button[type="submit"] {
-  padding: 0.5rem;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button[type="submit"]:hover {
-  background-color: #555;
-}
-
-.nav-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #2f2f2f;
-  height: 60px;
-  padding: 0 20px;
-}
-
-.nav-logo a {
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.nav-links a {
-  color: #fff;
-  font-size: 18px;
-  margin-left: 20px;
-  text-decoration: none;
-}
-
-.nav-links a:first-child {
-  margin-left: 0;
-}
-
-
+  Uncomment the remaining styles if needed.
 */
