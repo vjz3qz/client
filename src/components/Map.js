@@ -21,7 +21,7 @@ const Map = () => {
   const Marker = ({ lat, lng }) => <div className="marker" lat={lat} lng={lng} />;
 
   return (
-    <div style={{ height: '500px', width: '100%' }}>
+    <div className="map" style={{ height: '500px', width: '100%' }}> {/* Here apply "map" class instead of "map-container" */}
       <GoogleMapReact
         bootstrapURLKeys={{ key: api_key }}
         defaultCenter={defaultProps.center}
