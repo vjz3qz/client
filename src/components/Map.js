@@ -18,12 +18,6 @@ const Map = () => {
     { lat: 37.772, lng: -122.418 }
   ];
 
-  const Marker = ({ lat, lng }) => (
-    <div lat={lat} lng={lng}>
-      <img src="/src/styles/market-icon.jpeg" alt="Marker" />
-    </div>
-  );
-
   const addMarkers = (map, maps) => {
     markers.forEach(marker => {
       new maps.Marker({
