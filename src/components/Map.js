@@ -23,7 +23,7 @@ const Map = () => {
       new maps.Marker({
         position: { lat: marker.lat, lng: marker.lng },
         map: map,
-        title: 'Hello World!'
+        title: 'Restaurant Marker'
       });
     });
   };
