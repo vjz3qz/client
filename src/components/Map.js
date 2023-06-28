@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import GoogleMapReact from 'google-map-react';
+import axios from 'axios';
 
 const api_key = process.env.REACT_APP_API_KEY;
 
@@ -12,18 +13,33 @@ const Map = () => {
     zoom: 8
   };
 
-  const markers = [
-    { lat: 37.7749, lng: -122.4194 },
-    { lat: 37.773, lng: -122.421 },
-    { lat: 37.772, lng: -122.418 }
-  ];
+  const [markers, setMarkers] = useState([]);
+
+  useEffect(() => {
+    const fetchExpiredRestaurants = async () => {
+      try {
+        const response = await axios.get('/api/restaurants/expiring-food');
+        const expiredRestaurants = response.data;
+        const restaurantMarkers = expiredRestaurants.map(restaurant => ({
+          lat: restaurant.coordinates[1],
+          lng: restaurant.coordinates[0],
+          title: restaurant.name
+        }));
+        setMarkers(restaurantMarkers);
+      } catch (error) {
+        console.error('Failed to fetch expired restaurants:', error);
+      }
+    };
+
+    fetchExpiredRestaurants();
+  }, []);
 
   const addMarkers = (map, maps) => {
     markers.forEach(marker => {
       new maps.Marker({
         position: { lat: marker.lat, lng: marker.lng },
         map: map,
-        title: 'Restaurant Marker'
+        title: marker.title
       });
     });
   };
