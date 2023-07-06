@@ -21,8 +21,8 @@ const Map = () => {
         const response = await axios.get('/api/restaurants/expiring-food');
         const expiredRestaurants = response.data;
         const restaurantMarkers = expiredRestaurants.map(restaurant => ({
-          lat: restaurant.coordinates[1],
-          lng: restaurant.coordinates[0],
+          lat: restaurant.coordinates[0],
+          lng: restaurant.coordinates[1],
           title: restaurant.name
         }));
         setMarkers(restaurantMarkers);
