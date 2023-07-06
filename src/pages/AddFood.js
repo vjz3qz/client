@@ -1,12 +1,15 @@
 import React from 'react';
-import FoodForm from '../components/FoodForm';
+import NewFoodForm from './newFoodForm';
 
-function AddFood() {
+const AddFood = () => {
   return (
-    <div>
-      <FoodForm />
+    <div className="add-food-container">
+      <h1>Add Food</h1>
+      <div className="form-container">
+        <NewFoodForm />
+      </div>
     </div>
   );
-}
+};
 
 export default AddFood;
