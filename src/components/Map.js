@@ -14,6 +14,7 @@ const Map = () => {
   };
 
   const [markers, setMarkers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchExpiredRestaurants = async () => {
@@ -26,6 +27,7 @@ const Map = () => {
           title: restaurant.name
         }));
         setMarkers(restaurantMarkers);
+        setLoading(false);
       } catch (error) {
         console.error('Failed to fetch expired restaurants:', error);
       }
@@ -47,17 +49,16 @@ const Map = () => {
   const handleApiLoaded = (map, maps) => {
     addMarkers(map, maps);
   };
-
+  
   return (
+    loading ? <div>Loading...</div> :
     <div className="map" style={{ height: '500px', width: '100%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: api_key }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
         onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
-      >
-        {/* You can render additional components or markers here */}
-      </GoogleMapReact>
+      />
     </div>
   );
 };
