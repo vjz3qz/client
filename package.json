@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:1234/",
+  "proxy": "http://localhost:1234/",
   "https-proxy": "http://localhost:1234/",
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.2",

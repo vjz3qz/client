@@ -19,7 +19,7 @@ const Map = () => {
   useEffect(() => {
     const fetchExpiredRestaurants = async () => {
       try {
-        const response = await axios.get('/api/restaurants/expiring-food');
+        const response = await axios.get('/api/restaurants/');
         const expiredRestaurants = response.data;
         const restaurantMarkers = expiredRestaurants.map(restaurant => ({
           lat: restaurant.coordinates[0],
@@ -28,6 +28,7 @@ const Map = () => {
         }));
         setMarkers(restaurantMarkers);
         setLoading(false);
+        console.log(restaurantMarkers)
       } catch (error) {
         console.error('Failed to fetch expired restaurants:', error);
       }
